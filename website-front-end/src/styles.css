@@ -9,7 +9,7 @@ body {
 
 .header {
     background-color: #3ca2e0;
-    height: 10em;
+    height: 7em;
     margin-top: -2em;
     padding: 0;
     position: relative;
@@ -18,7 +18,7 @@ body {
 .header h1{
     text-align: center;
     padding-top: 1em;
-    line-height: 3em;
+    line-height: 2em;
     color: #ffffff;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif
     
@@ -26,12 +26,18 @@ body {
 
 .main-container {
     margin: 0 auto;
-    width: 70em;
+    max-width: 60em;
 }
-.content-zone {
+.content-container {
     background-color: #ffffff;
     border-radius: 1em;
     margin-top: 1em;
+    
+}
+
+.content-zone {
+    padding: 1em;
+    
 }
 
 .navbar {
