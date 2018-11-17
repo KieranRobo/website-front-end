@@ -2,13 +2,13 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color:#ecf0f1;
+    background-color:#DAE3E5;
     margin:0;
     padding:0;
     }
 
 .header {
-    background-color: #3ca2e0;
+    background-color: #3e68a6;
     height: 7em;
     margin-top: -2em;
     padding: 0;
@@ -30,8 +30,8 @@ body {
 }
 .content-container {
     background-color: #ffffff;
-    border-radius: 1em;
-    margin-top: 1em;
+    border-radius: 0.5em;
+    margin-top: 0.2em;
     
 }
 
@@ -46,8 +46,7 @@ body {
     float: top;
 
     height: 4em;
-    background-color: #efba00;
-    border-radius: 0 0 1em 1em;
+    background-color: #94B0DA;
 }
 
 .navbar #button {
