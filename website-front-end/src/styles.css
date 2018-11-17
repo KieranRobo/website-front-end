@@ -66,5 +66,10 @@ body {
 
 .navbar #button:hover {
     background-color: #ffffff;
+    cursor: pointer;
+}
+
+.router-link-active {
+	background-color: #ffffff;
 }
 
