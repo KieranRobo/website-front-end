@@ -7,7 +7,7 @@ body {
     padding:0;
     }
 
-.header {
+#header {
     background-color: #3e68a6;
     height: 7em;
     margin-top: -2em;
@@ -15,7 +15,7 @@ body {
     position: relative;
 }
 
-.header h1{
+#header h1{
     text-align: center;
     padding-top: 1em;
     line-height: 2em;
@@ -24,23 +24,23 @@ body {
     
 }
 
-.main-container {
+#main-container {
     margin: 0 auto;
     max-width: 60em;
 }
-.content-container {
+#content-container {
     background-color: #ffffff;
     border-radius: 0.5em;
     margin-top: 0.2em;
     
 }
 
-.content-zone {
+#content-zone {
     padding: 1em;
     
 }
 
-.navbar {
+#navbar {
     
     position: relative; 
     float: top;
@@ -49,7 +49,7 @@ body {
     background-color: #94B0DA;
 }
 
-.navbar #button {
+#navbar .button {
     width: 5em;
     line-height: 2.5em;
     padding: 0.5em;
@@ -58,12 +58,12 @@ body {
     
 }
 
-.navbar a {
+#navbar a {
     color: #000000;
     text-decoration: none; /* no underline */
   }
 
-.navbar #button:hover {
+#navbar .button:hover {
     background-color: #ffffff;
     cursor: pointer;
 }

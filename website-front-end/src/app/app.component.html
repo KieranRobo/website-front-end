@@ -1,24 +1,21 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-<div class="header">
+<div id="header">
   <h1>
     {{ title }}
   </h1>
 </div>
 
-<div class="main-container">
+<div id="main-container">
   
-
-
-
-  
-  <div class="navbar">
-      <div id="button" routerLink="/home" routerLinkActive="router-link-active">Home</div>
-      <div id="button" routerLink="/angular" routerLinkActive="router-link-active">Angular</div>
+  <div id="navbar">
+      <div class="button" routerLink="/home" routerLinkActive="router-link-active">Home</div>
+      <div class="button" routerLink="/angular" routerLinkActive="router-link-active">Angular</div>
+      <div class="button" routerLink="/contact" routerLinkActive="router-link-active">Contact</div>
   </div>
 
-  <div class="content-container">
-    <div class="content-zone">
+  <div id="content-container">
+    <div id="content-zone">
     
       <router-outlet></router-outlet>
     </div>
