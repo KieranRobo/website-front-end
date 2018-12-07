@@ -10,6 +10,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AngularComponent } from './component/angular/angular.component';
 import { HomeComponent } from './component/home/home.component';
 import { ContactComponent } from './component/contact/contact.component';
+import { PagesComponent } from './component/pages/pages.component';
+
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -20,7 +23,8 @@ const appRoutes: Routes = [
   },
   { path: 'home', component: HomeComponent, pathMatch: 'full' },
   { path: 'angular', component: AngularComponent, pathMatch: 'full' },
-  { path: 'contact', component: ContactComponent, pathMatch: 'full' }
+  { path: 'contact', component: ContactComponent, pathMatch: 'full' },
+  { path: 'pages', component: PagesComponent, pathMatch: 'full' }
 ];
 
 @NgModule({
@@ -29,7 +33,8 @@ const appRoutes: Routes = [
     AppComponent,
     AngularComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    PagesComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -38,7 +43,8 @@ const appRoutes: Routes = [
     ),
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
