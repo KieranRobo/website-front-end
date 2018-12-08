@@ -19,6 +19,12 @@ export class PagesComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.refreshPages();
+  }
+
+  refreshPages() {
+    this.hideSpinner = false;
+    this.allPages = [];
     this.pageService.getPages().subscribe(data => {
       for (let i in data) {
         var pageId = data[i]['id'];
@@ -36,6 +42,14 @@ export class PagesComponent implements OnInit {
     this.allPages.forEach((element) => {
       console.log("ID:" + element.id + " Name:" + element.name + " Data:" + element.data);
     });
+  }
+
+  deletePage(pageId : number) {
+    console.log("deleting page " + pageId);
+    this.pageService.deletePage(pageId).subscribe(data => {
+      this.refreshPages();
+    })
+    
   }
 
 }
