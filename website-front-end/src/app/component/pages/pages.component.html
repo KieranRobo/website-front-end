@@ -1,3 +1,18 @@
-<p>
-  pages works!
-</p>
+<div class="lds-dual-ring" [hidden]="hideSpinner"></div>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Page ID</th>
+      <th scope="col">Page Name</th>
+      <th scope="col">Page Data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let page of allPages">
+      <td>{{page.id}}</td>
+      <td>{{page.name}}</td>
+      <td>{{page.data}}</td>
+    </tr>
+  </tbody>
+</table>
+

@@ -9,10 +9,12 @@ import { Page } from 'src/app/models/page';
 })
 export class PagesComponent implements OnInit {
 
+  hideSpinner : boolean = false;
   private allPages : Page[] = [];
 
   constructor(
-    private pageService : PageService
+    private pageService : PageService,
+    
     ) { 
   }
 
@@ -25,11 +27,8 @@ export class PagesComponent implements OnInit {
         this.allPages.push(new Page(pageId, pageName, pageData));
         
       }
-      this.logAllPages();
+      this.hideSpinner = true;
     });
-
-    
-    
   }
 
   logAllPages() {
