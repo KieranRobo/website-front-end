@@ -47,9 +47,9 @@ export class PagesComponent implements OnInit {
   deletePage(pageId : number) {
     console.log("deleting page " + pageId);
     this.pageService.deletePage(pageId).subscribe(data => {
-      console.log("data: " + data);
+      this.refreshPages();
     })
-    this.refreshPages();
+    
   }
 
 }
