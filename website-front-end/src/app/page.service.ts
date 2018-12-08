@@ -11,7 +11,11 @@ export class PageService {
   constructor(private http: HttpClient) { }
 
   getPages() {
-    return this.http.get("http://kieranrobertson.com/api/pages/all").pipe(
+    return this.http.get("/api/pages/all").pipe(
       map((res:Response)=> res));
+  }
+
+  deletePage(pageId : number) {
+    return this.http.delete("/api/pages/remove?id=" + pageId);
   }
 }
