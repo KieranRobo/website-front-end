@@ -9,46 +9,34 @@ import { Page } from 'src/app/models/page';
 })
 export class PagesComponent implements OnInit {
 
+  private allPages : Page[] = [];
+
   constructor(
     private pageService : PageService
     ) { 
   }
 
   ngOnInit() {
-    
-    /*
-    let page : Page = this.pageService.getPages();
-    
-    this.pageService.getPages().subscribe((response) => {
-      console.log("toString: " + response.toString());
-      console.log("json: " + response.stringify);
-    })
-    */
-    this.pageService.getPages().subscribe((response) => {
-      /*
-      for(let i=0; i<response.data.length; i++) {
-        let page : Page = new Page(
-          response[i]['id'],
-          response[i]['name'],
-          response[i]['data']);
-  
-          console.log("Page ID: " + page.id);
-          console.log("Page Name: " + page.name);
-          console.log("Page Data: " + page.data);
+    this.pageService.getPages().subscribe(data => {
+      for (let i in data) {
+        var pageId = data[i]['id'];
+        var pageName = data[i]['name'];
+        var pageData = data[i]['data'];
+        this.allPages.push(new Page(pageId, pageName, pageData));
+        
       }
-      */
-     
-      let page : Page = new Page(
-        response['id'],
-        response['name'],
-        response['data']);
-
-        console.log("Page ID: " + page.id);
-        console.log("Page Name: " + page.name);
-        console.log("Page Data: " + page.data);
+      this.logAllPages();
     });
+
     
     
+  }
+
+  logAllPages() {
+    console.log("loggin");
+    this.allPages.forEach((element) => {
+      console.log("ID:" + element.id + " Name:" + element.name + " Data:" + element.data);
+    });
   }
 
 }

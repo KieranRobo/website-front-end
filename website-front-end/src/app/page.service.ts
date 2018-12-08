@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http'
-import { HttpClient } from '@angular/common/http';
-import 'rxjs/add/operator/map'
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 import { Page } from './models/page';
 
 @Injectable({
@@ -12,7 +11,7 @@ export class PageService {
   constructor(private http: HttpClient) { }
 
   getPages() {
-    return this.http.get("http://kieranrobertson.com/api/pages/details?id=2")
-    .map((res : Page) => res)
+    return this.http.get("http://kieranrobertson.com/api/pages/all").pipe(
+      map((res:Response)=> res));
   }
 }
