@@ -41,13 +41,6 @@ export class ProjectsComponent implements OnInit {
     });
   }
 
-  logAllProjectss() {
-    console.log("loggin");
-    this.allProjects.forEach((element) => {
-      console.log("ID:" + element.id + " Name:" + element.name + " Data:" + element.data);
-    });
-  }
-
   deleteProject(pageId : number) {
     console.log("deleting page " + pageId);
     this.api.deleteProject(pageId).subscribe(data => {
