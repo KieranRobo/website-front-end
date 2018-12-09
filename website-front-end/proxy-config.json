@@ -1,11 +1,13 @@
+
+
 {
-    "/api": {
-        "target":  {
-            "host": "kieranrobertson.com",
-            "protocol": "http:",
-            "port": 80
-        },
-        "secure": false,
-        "changeOrigin": true
+    "/api/*": {
+      "target": "http://localhost:8080",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/api": ""
+      }
     }
 }

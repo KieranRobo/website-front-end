@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { Page } from './models/page';
+import { Project } from './models/project';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PageService {
+export class APIService {
 
   constructor(private http: HttpClient) { }
 
-  getPages() {
-    return this.http.get("/api/pages/all").pipe(
+  getProjects() {
+    return this.http.get("/api/project/all").pipe(
       map((res:Response)=> res));
   }
 
-  deletePage(pageId : number) {
-    return this.http.delete("/api/pages/remove?id=" + pageId);
+  deleteProject(pageId : number) {
+    return this.http.delete("/api/project/remove?id=" + pageId);
   }
 }
