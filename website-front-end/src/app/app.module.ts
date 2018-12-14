@@ -10,9 +10,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { AngularComponent } from './component/angular/angular.component';
 import { HomeComponent } from './component/home/home.component';
 import { ContactComponent } from './component/contact/contact.component';
-import { ProjectsComponent } from './component/projects/projects.component';
+
+
+//import { ProjectsComponent } from './component/projects/projects.component';
+//import { ProjectsComponent } from './projects/home/home.component';
 
 import { HttpClientModule } from '@angular/common/http';
+
+import { ProjectsModule, ProjectsComponent } from './projects/projects.module';
 
 
 
@@ -33,8 +38,7 @@ const appRoutes: Routes = [
     AppComponent,
     AngularComponent,
     HomeComponent,
-    ContactComponent,
-    ProjectsComponent
+    ContactComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -44,7 +48,8 @@ const appRoutes: Routes = [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ProjectsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
