@@ -11,13 +11,9 @@ import { AngularComponent } from './component/angular/angular.component';
 import { HomeComponent } from './component/home/home.component';
 import { ContactComponent } from './component/contact/contact.component';
 
-
-//import { ProjectsComponent } from './component/projects/projects.component';
-//import { ProjectsComponent } from './projects/home/home.component';
-
 import { HttpClientModule } from '@angular/common/http';
 
-import { ProjectsModule, ProjectsComponent } from './projects/projects.module';
+import { ProjectsModule } from './projects/projects.module';
 
 
 
@@ -28,8 +24,7 @@ const appRoutes: Routes = [
   },
   { path: 'home', component: HomeComponent, pathMatch: 'full' },
   { path: 'angular', component: AngularComponent, pathMatch: 'full' },
-  { path: 'contact', component: ContactComponent, pathMatch: 'full' },
-  { path: 'projects', component: ProjectsComponent, pathMatch: 'full' }
+  { path: 'contact', component: ContactComponent, pathMatch: 'full' }
 ];
 
 @NgModule({
