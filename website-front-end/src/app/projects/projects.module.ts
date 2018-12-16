@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NewComponent } from './new/new.component';
+import { FormsModule } from '@angular/forms';
 
 import { ProjectRoutingModule } from './projects.routes';
 import { ViewComponent } from './view/view.component';
@@ -11,7 +12,8 @@ import { ProjectsComponent } from './projects.component';
   declarations: [NewComponent, ViewComponent, ProjectsComponent],
   imports: [
     CommonModule,
-    ProjectRoutingModule
+    ProjectRoutingModule,
+    FormsModule
   ],
   exports: [
     ProjectsComponent

@@ -18,4 +18,14 @@ export class APIService {
   deleteProject(pageId : number) {
     return this.http.delete("/api/project/remove?id=" + pageId);
   }
+
+  createProject(project : Project) {
+    var postData = {
+      "display_name" : project.title,
+      "display_content" : project.content,
+      "link_name" : project.linkName,
+    };
+    //return this.http.post("/api/project/new", postData);
+    return this.http.post("/api/project/new?display_name=" + project.title + "&display_content=" + project.content + "&link_name=" + project.linkName , null);
+  }
 }
