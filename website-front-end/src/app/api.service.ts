@@ -26,6 +26,13 @@ export class APIService {
       "link_name" : project.linkName,
     };
     //return this.http.post("/api/project/new", postData);
-    return this.http.post("/api/project/new?display_name=" + project.title + "&display_content=" + project.content + "&link_name=" + project.linkName , null);
+
+    const headers = new Headers({
+      'Cache-Control': 'no-cache, no-store, must-revalidate',
+      'Pragma': 'no-cache',
+      'Expires': '0'
+    });
+
+    return this.http.post("/api/project/new?display_name=" + project.title + "&display_content=" + project.content + "&link_name=" + project.linkName , headers);
   }
 }
