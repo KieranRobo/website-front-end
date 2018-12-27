@@ -35,21 +35,21 @@ export class NewComponent implements OnInit {
     this.submissionResponse = null;
     if (this.isFormValid()) {
       this.hideSpinner = false;
-      this.api.createProject(this.newProject).subscribe((response: Response) => {
-        /* Currently broken...
-        var apiResponse = new APIResponse(response.status, response.text(), "url here");
-        if (apiResponse.responseCode == 200) {
-          apiResponse.successStatus = true;
-        } else {
-          apiResponse.successStatus = false;
-        }
-        */
-
-        this.hideSpinner = true;
-        var apiResponse = new APIResponse(200, null, "url here");
-        this.submissionResponse = apiResponse;
+      this.api.createProject(this.newProject).subscribe(resp => {
         
-      });
+        this.submissionResponse = new APIResponse(resp.status, "body", resp.url);
+        if (this.submissionResponse.responseCode == 200) {
+          this.submissionResponse.successStatus = true;
+        } else {
+          this.submissionResponse.successStatus = false;
+        }
+        this.hideSpinner = true;
+      },
+      err => {
+        this.submissionResponse = new APIResponse(err.status, "body", err.url, false);
+        this.hideSpinner = true;
+      }
+      );
     }
   }
 

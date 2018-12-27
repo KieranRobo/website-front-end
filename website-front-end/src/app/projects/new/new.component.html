@@ -1,7 +1,12 @@
 <div class="lds-dual-ring" [hidden]="hideSpinner"></div>
 
-<div *ngIf="submissionResponse != null" class="alert alert-success">
-  Project Successfully Created
+<div *ngIf="submissionResponse != null">
+  <div *ngIf="submissionResponse.successStatus == true" class="alert alert-success">
+    Project Successfully Created
+  </div>
+  <div *ngIf="submissionResponse.successStatus == false" class="alert alert-danger">
+    There was a problem connecting to an external service. The request has failed.
+  </div>
 </div>
 
 <form ngSubmit="createProject();">

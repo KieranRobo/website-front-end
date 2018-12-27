@@ -11,28 +11,19 @@ export class APIService {
   constructor(private http: HttpClient) { }
 
   getProjects() {
-    return this.http.get("/api/project/all").pipe(
-      map((res:Response)=> res));
+    return this.http.get("/api/projects", {observe: 'response'});
   }
 
   deleteProject(pageId : number) {
-    return this.http.delete("/api/project/remove?id=" + pageId);
+    return this.http.delete("/api/projects/" + pageId, {observe: 'response'} );
   }
 
   createProject(project : Project) {
     var postData = {
-      "display_name" : project.title,
-      "display_content" : project.content,
-      "link_name" : project.linkName,
+      "name" : project.title,
+      "content" : project.content,
+      "symLink" : project.linkName,
     };
-    //return this.http.post("/api/project/new", postData);
-
-    const headers = new Headers({
-      'Cache-Control': 'no-cache, no-store, must-revalidate',
-      'Pragma': 'no-cache',
-      'Expires': '0'
-    });
-
-    return this.http.post("/api/project/new?display_name=" + project.title + "&display_content=" + project.content + "&link_name=" + project.linkName , headers);
+    return this.http.post("/api/projects", postData, {observe: 'response'});
   }
 }
