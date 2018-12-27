@@ -21,11 +21,11 @@ export class APIService {
 
   createProject(project : Project) {
     var postData = {
-      "display_name" : project.title,
-      "display_content" : project.content,
-      "link_name" : project.linkName,
+      "name" : project.title,
+      "content" : project.content,
+      "symLink" : project.linkName,
     };
-    return this.http.post("/api/projects", postData);
+    return this.http.post("/api/projects", postData, {observe: 'response'});
 
     /*
     const headers = new Headers({
