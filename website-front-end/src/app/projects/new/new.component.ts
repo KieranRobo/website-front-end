@@ -36,8 +36,7 @@ export class NewComponent implements OnInit {
     if (this.isFormValid()) {
       this.hideSpinner = false;
       this.api.createProject(this.newProject).subscribe(resp => {
-        console.log(resp);
-
+        
         this.submissionResponse = new APIResponse(resp.status, "body", resp.url);
         if (this.submissionResponse.responseCode == 200) {
           this.submissionResponse.successStatus = true;
