@@ -14,6 +14,10 @@ export class APIService {
     return this.http.get("/api/projects", {observe: 'response'});
   }
 
+  getProject(projectId : number) {
+    return this.http.get("/api/projects/" + projectId, {observe: 'response'});
+  }
+
   deleteProject(pageId : number) {
     return this.http.delete("/api/projects/" + pageId, {observe: 'response'} );
   }

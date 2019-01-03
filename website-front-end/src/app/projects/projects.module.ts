@@ -6,10 +6,11 @@ import { FormsModule } from '@angular/forms';
 import { ProjectRoutingModule } from './projects.routes';
 import { ViewComponent } from './view/view.component';
 import { ProjectsComponent } from './projects.component';
+import { EditComponent } from './edit/edit.component';
 
 
 @NgModule({
-  declarations: [NewComponent, ViewComponent, ProjectsComponent],
+  declarations: [NewComponent, ViewComponent, ProjectsComponent, EditComponent],
   imports: [
     CommonModule,
     ProjectRoutingModule,

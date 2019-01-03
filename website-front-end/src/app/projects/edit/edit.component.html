@@ -1,0 +1,52 @@
+<div class="lds-dual-ring" [hidden]="hideSpinner"></div>
+
+<!--
+<div *ngIf="submissionResponse != null">
+  <div *ngIf="submissionResponse.successStatus == true" class="alert alert-success">
+    Project Successfully Created
+  </div>
+  <div *ngIf="submissionResponse.successStatus == false" class="alert alert-danger">
+    There was a problem connecting to an external service. The request has failed.
+  </div>
+</div>
+-->
+
+<form ngSubmit="createProject();">
+  <div class="form-group">
+    <label for="projectTitle">Project Title</label>
+    <input [(ngModel)]="project.title" #projectTitle="ngModel" type="text" class="form-control" id="projectTitle" name="projectTitle" placeholder="My Super Cool Project!"
+     [minLength]="3" (change)="this.isTitleValid()" required>
+    <div *ngIf="titleError != null"
+      class="alert alert-danger">
+      {{titleError}}
+    </div>
+    
+  </div>
+  <div class="form-group">
+    <label for="linkName">Link Name</label>
+    <input [(ngModel)]="project.linkName" #linkName="ngModel" type="text" class="form-control" id="linkName" name="linkName" aria-describedby="linkHelp" placeholder="super-cool-project" 
+    (change)="this.isLinkValid()" required>
+    <div *ngIf="linkError != null"
+      class="alert alert-danger">
+      {{linkError}}
+    </div>
+    <small id="linkHelp" class="form-text text-muted">This is the name of the link that will be used for the projects URL.</small>
+  </div>
+  
+
+  <div class="form-group">
+    <label for="content">Content</label>
+    <textarea [(ngModel)]="project.content" class="form-control" rows="5" id="content" name="content" aria-describedby="contentHelp" (change)="this.isContentValid()" required></textarea>
+    <div *ngIf="contentError != null"
+      class="alert alert-danger">
+      {{contentError}}
+    </div>
+
+    <small id="contentHelp" class="form-text text-muted">You can use HTML and CSS tags in the content area.</small>
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="featuredCheck">
+    <label class="form-check-label" for="featuredCheck">Featured Project</label>
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="createProject();">Submit</button>
+</form>

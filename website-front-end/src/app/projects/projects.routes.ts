@@ -4,12 +4,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { NewComponent }    from './new/new.component';
 import { ViewComponent } from './view/view.component';
 import { ProjectsComponent } from './projects.component';
+import { EditComponent } from './edit/edit.component';
 
 const projectRoutes: Routes = [
   { path: 'projects',  component: ProjectsComponent,
     children: [
       { path: 'new',  component: NewComponent },
-      { path: 'view',  component: ViewComponent }
+      { path: 'view',  component: ViewComponent },
+      { path: 'edit/:id',  component: EditComponent }
     ]
   }
 ];
