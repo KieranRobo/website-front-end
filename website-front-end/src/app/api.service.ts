@@ -14,7 +14,11 @@ export class APIService {
     return this.http.get("/api/projects", {observe: 'response'});
   }
 
-  getProject(projectId : number) {
+  getProjectById(projectId : number) {
+    return this.http.get("/api/projects/" + projectId, {observe: 'response'});
+  }
+
+  getProjectByLink(projectId : String) {
     return this.http.get("/api/projects/" + projectId, {observe: 'response'});
   }
 
