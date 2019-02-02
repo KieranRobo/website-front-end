@@ -30,4 +30,13 @@ export class APIService {
     };
     return this.http.post("/api/projects", postData, {observe: 'response'});
   }
+
+  editProject(project : Project) {
+    var postData = {
+      "name" : project.title,
+      "content" : project.content,
+      "symLink" : project.linkName,
+    };
+    return this.http.put("/api/projects/" + project.id, postData, {observe: 'response'});
+  }
 }

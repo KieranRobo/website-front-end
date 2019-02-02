@@ -1,17 +1,18 @@
 <div class="lds-dual-ring" [hidden]="hideSpinner"></div>
 
-<!--
-<div *ngIf="submissionResponse != null">
-  <div *ngIf="submissionResponse.successStatus == true" class="alert alert-success">
-    Project Successfully Created
-  </div>
-  <div *ngIf="submissionResponse.successStatus == false" class="alert alert-danger">
-    There was a problem connecting to an external service. The request has failed.
-  </div>
-</div>
--->
 
-<form ngSubmit="createProject();">
+
+<form ngSubmit="createProject();" [hidden]="!hideSpinner">
+
+  <div *ngIf="submissionResponse != null">
+      <div *ngIf="submissionResponse.successStatus == true" class="alert alert-success">
+        Project Successfully Modified
+      </div>
+      <div *ngIf="submissionResponse.successStatus == false" class="alert alert-danger">
+        There was a problem connecting to an external service. The request has failed.
+      </div>
+    </div>
+
   <div class="form-group">
     <label for="projectTitle">Project Title</label>
     <input [(ngModel)]="project.title" #projectTitle="ngModel" type="text" class="form-control" id="projectTitle" name="projectTitle" placeholder="My Super Cool Project!"
@@ -48,5 +49,5 @@
     <input type="checkbox" class="form-check-input" id="featuredCheck">
     <label class="form-check-label" for="featuredCheck">Featured Project</label>
   </div>
-  <button type="submit" class="btn btn-primary" (click)="createProject();">Submit</button>
+  <button type="submit" class="btn btn-primary" (click)="editProject();">Edit</button>
 </form>
