@@ -14,6 +14,10 @@ export class APIService {
     return this.http.get("/api/projects", {observe: 'response'});
   }
 
+  getProject(projectId : number) {
+    return this.http.get("/api/projects/" + projectId, {observe: 'response'});
+  }
+
   deleteProject(pageId : number) {
     return this.http.delete("/api/projects/" + pageId, {observe: 'response'} );
   }
@@ -25,5 +29,14 @@ export class APIService {
       "symLink" : project.linkName,
     };
     return this.http.post("/api/projects", postData, {observe: 'response'});
+  }
+
+  editProject(project : Project) {
+    var postData = {
+      "name" : project.title,
+      "content" : project.content,
+      "symLink" : project.linkName,
+    };
+    return this.http.put("/api/projects/" + project.id, postData, {observe: 'response'});
   }
 }
