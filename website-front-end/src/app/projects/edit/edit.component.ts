@@ -38,7 +38,7 @@ export class EditComponent implements OnInit {
 
   parseProject() {
     this.hideSpinner = false;
-    this.api.getProject(this.projectId).subscribe(resp => {
+    this.api.getProjectById(this.projectId).subscribe(resp => {
       var data = resp.body;
 
       this.project.id = data['id'];
