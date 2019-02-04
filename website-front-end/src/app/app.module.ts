@@ -18,6 +18,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProjectsModule } from './projects/projects.module';
 import { ViewProjectComponent } from './component/view-project/view-project.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatCheckboxModule, MatDialogModule, MatFormFieldModule } from '@angular/material';
+import { DeleteProjectDialog } from './projects/view/view.component';
+
+
 
 
 const appRoutes: Routes = [
@@ -38,7 +43,8 @@ const appRoutes: Routes = [
     AngularComponent,
     HomeComponent,
     ContactComponent,
-    ViewProjectComponent
+    ViewProjectComponent,
+    DeleteProjectDialog
   ],
   imports: [
     RouterModule.forRoot(
@@ -51,9 +57,15 @@ const appRoutes: Routes = [
     HttpClientModule,
     ProjectsModule,
     FroalaEditorModule.forRoot(),
-    FroalaViewModule.forRoot()
+    FroalaViewModule.forRoot(),
+    BrowserAnimationsModule,
+    MatButtonModule, 
+    MatCheckboxModule,
+    MatDialogModule,
+    MatFormFieldModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DeleteProjectDialog]
 })
 export class AppModule { }

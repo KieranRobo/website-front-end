@@ -1,0 +1,9 @@
+<h2 mat-dialog-title>Delete Project</h2>
+<mat-dialog-content>Are you sure you want to delete <strong>{{ project.title }}</strong>?</mat-dialog-content>
+<mat-dialog-actions>
+<button mat-button tabindex="-1" mat-button [mat-dialog-close]>No</button>
+  <button mat-button [mat-dialog-close] (click)="confirmDelete()">Yes</button>
+  
+  <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+  
+</mat-dialog-actions>
