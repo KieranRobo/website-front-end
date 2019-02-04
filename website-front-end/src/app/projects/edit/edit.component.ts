@@ -4,6 +4,9 @@ import { APIService } from 'src/app/api.service';
 import { Project } from 'src/app/models/project';
 import { APIResponse } from 'src/app/models/api-response';
 
+declare var jquery:any;
+declare var $ :any;
+
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
@@ -38,7 +41,7 @@ export class EditComponent implements OnInit {
 
   parseProject() {
     this.hideSpinner = false;
-    this.api.getProject(this.projectId).subscribe(resp => {
+    this.api.getProjectById(this.projectId).subscribe(resp => {
       var data = resp.body;
 
       this.project.id = data['id'];

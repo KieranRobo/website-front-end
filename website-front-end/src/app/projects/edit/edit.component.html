@@ -1,6 +1,8 @@
 <div class="lds-dual-ring" [hidden]="hideSpinner"></div>
 
-
+<script>
+    
+  </script>
 
 <form ngSubmit="createProject();" [hidden]="!hideSpinner">
 
@@ -34,10 +36,10 @@
     <small id="linkHelp" class="form-text text-muted">This is the name of the link that will be used for the projects URL.</small>
   </div>
   
-
+<div class="exampleEditor"></div>
   <div class="form-group">
     <label for="content">Content</label>
-    <textarea [(ngModel)]="project.content" class="form-control" rows="5" id="content" name="content" aria-describedby="contentHelp" (change)="this.isContentValid()" required></textarea>
+    <textarea [(ngModel)]="project.content" class="form-control" rows="5" id="content" name="content" aria-describedby="contentHelp" (change)="this.isContentValid()" [froalaEditor] required></textarea>
     <div *ngIf="contentError != null"
       class="alert alert-danger">
       {{contentError}}
@@ -51,3 +53,5 @@
   </div>
   <button type="submit" class="btn btn-primary" (click)="editProject();">Edit</button>
 </form>
+
+

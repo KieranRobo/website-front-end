@@ -3,7 +3,7 @@ export class Project {
 
 
     constructor(
-        public id?: string,
+        public id?: number,
         public title?: string,
         public linkName?: string,
         public dateCreated?: string,

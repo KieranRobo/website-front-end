@@ -34,7 +34,7 @@
 
   <div class="form-group">
     <label for="content">Content</label>
-    <textarea [(ngModel)]="newProject.content" class="form-control" rows="5" id="content" name="content" aria-describedby="contentHelp" (change)="this.isContentValid()" required></textarea>
+    <textarea [(ngModel)]="newProject.content" class="form-control" rows="5" id="content" name="content" aria-describedby="contentHelp" (change)="this.isContentValid()" [froalaEditor] required></textarea>
     <div *ngIf="contentError != null"
       class="alert alert-danger">
       {{contentError}}

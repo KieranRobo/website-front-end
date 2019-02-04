@@ -19,7 +19,7 @@
   <tbody>
     <tr *ngFor="let project of allProjects">
       <td>{{project.id}}</td>
-      <td>{{project.title}}</td>
+      <td><a [routerLink]="['../../p', project.linkName]">{{project.title}}</a></td>
       <td>{{project.linkName}}</td>
       <td>{{project.content}}</td>
       <td>
@@ -30,7 +30,7 @@
       </td>
         
       <td>
-        <button type="button" class="close" aria-label="Close" (click)="deleteProject(project.id)">
+        <button type="button" class="close" aria-label="Close" (click)="deleteProject(project)">
         <span aria-hidden="true">&times;</span>
       </button>
     </td>
