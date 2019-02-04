@@ -7,6 +7,7 @@ import { ProjectRoutingModule } from './projects.routes';
 import { ViewComponent } from './view/view.component';
 import { ProjectsComponent } from './projects.component';
 import { EditComponent } from './edit/edit.component';
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 
 
 @NgModule({
@@ -14,7 +15,9 @@ import { EditComponent } from './edit/edit.component';
   imports: [
     CommonModule,
     ProjectRoutingModule,
-    FormsModule
+    FormsModule,
+    FroalaEditorModule.forRoot(),
+    FroalaViewModule.forRoot()
   ],
   exports: [
     ProjectsComponent

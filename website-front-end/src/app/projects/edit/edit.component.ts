@@ -4,6 +4,9 @@ import { APIService } from 'src/app/api.service';
 import { Project } from 'src/app/models/project';
 import { APIResponse } from 'src/app/models/api-response';
 
+declare var jquery:any;
+declare var $ :any;
+
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
