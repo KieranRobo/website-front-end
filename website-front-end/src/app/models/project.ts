@@ -6,6 +6,7 @@ export class Project {
         public id?: number,
         public title?: string,
         public linkName?: string,
+        public displayImage?: string,
         public dateCreated?: string,
         public lastModified?: string,
         public content?: string,

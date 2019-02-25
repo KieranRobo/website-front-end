@@ -20,6 +20,7 @@ export class NewComponent implements OnInit {
 
   titleError : String;
   linkError : String;
+  displayImageError : String;
   contentError : String;
 
   newProject : Project;
@@ -57,6 +58,7 @@ export class NewComponent implements OnInit {
     var formValid = true;
     if (!this.isTitleValid()) formValid = false;
     if (!this.isLinkValid()) formValid = false;
+    if (!this.isDisplayImageValid()) formValid = false;
     if (!this.isContentValid()) formValid = false;
 
     return formValid;
@@ -78,6 +80,16 @@ export class NewComponent implements OnInit {
       return false;
     } else {
       this.linkError = null;
+      return true;
+    }
+  }
+
+  isDisplayImageValid() {
+    if (this.newProject.displayImage.length == 0) {
+      this.displayImageError = "Cannot be left empty.";
+      return false;
+    } else {
+      this.displayImageError = null;
       return true;
     }
   }

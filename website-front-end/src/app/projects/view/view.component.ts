@@ -41,6 +41,7 @@ export class ViewComponent implements OnInit {
           data[i]['id'],
           data[i]['name'],
           data[i]['symLink'],
+          data[i]['displayImage'],
           data[i]['dateCreated'],
           data[i]['lastModified'],
           data[i]['content']

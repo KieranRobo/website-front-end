@@ -31,6 +31,7 @@ export class APIService {
       "name" : project.title,
       "content" : project.content,
       "symLink" : project.linkName,
+      "displayImage" : project.displayImage
     };
     return this.http.post("/api/projects", postData, {observe: 'response'});
   }
@@ -40,6 +41,7 @@ export class APIService {
       "name" : project.title,
       "content" : project.content,
       "symLink" : project.linkName,
+      "displayImage" : project.displayImage
     };
     return this.http.put("/api/projects/" + project.id, postData, {observe: 'response'});
   }
