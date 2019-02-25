@@ -30,6 +30,17 @@
     </div>
     <small id="linkHelp" class="form-text text-muted">This is the name of the link that will be used for the projects URL.</small>
   </div>
+
+  <div class="form-group">
+      <label for="displayImage">Display Image URL</label>
+      <input [(ngModel)]="newProject.displayImage" #displayImage="ngModel" type="text" class="form-control" id="displayImage" name="displayImage" aria-describedby="displayImageHelp" placeholder="http://kieranrobertson.com/image.png" 
+      (change)="this.isDisplayImageValid()" required>
+      <div *ngIf="displayImageError != null"
+        class="alert alert-danger">
+        {{displayImageError}}
+      </div>
+      <small id="displayImageHelp" class="form-text text-muted">URL of the image that is shown on the homepage.</small>
+    </div>
   
 
   <div class="form-group">

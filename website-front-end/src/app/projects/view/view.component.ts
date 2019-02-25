@@ -25,8 +25,6 @@ export class ViewComponent implements OnInit {
 
   ngOnInit() {
     this.refreshPages();
-
-    
   }
 
   refreshPages() {
@@ -43,12 +41,12 @@ export class ViewComponent implements OnInit {
           data[i]['id'],
           data[i]['name'],
           data[i]['symLink'],
+          data[i]['displayImage'],
           data[i]['dateCreated'],
           data[i]['lastModified'],
           data[i]['content']
           ));
       }
-      console.log(data);
       this.apiResponse = new APIResponse(resp.status, "body", resp.url);
           if (this.apiResponse.responseCode == 200) {
             this.apiResponse.successStatus = true;

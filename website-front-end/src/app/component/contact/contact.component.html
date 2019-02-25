@@ -1,4 +1,6 @@
-<div class="container">
+<section>
+
+  <div class="container">
   <h1>Hero Form</h1>
   <form name="form" #contactForm="ngForm" #contactForm="ngForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
@@ -40,4 +42,5 @@
     <button type="submit" class="btn btn-success" (click)="newHero(); contactForm.reset()" [disabled]="!contactForm.form.valid">Submit</button>
 
   </form>
-</div>
+  </div>
+</section>

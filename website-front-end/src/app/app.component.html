@@ -1,24 +1,107 @@
-<!--The content below is only a placeholder and can be replaced.-->
 
-<div id="header">
-  <h1>
-    {{ title }}
-  </h1>
-</div>
+ <!-- Navigation -->
+ <nav class="navbar navbar-expand-lg bg-secondary-theme fixed-top text-uppercase" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" routerLink="/home">Kieran Robertson</a>
+      <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary-theme text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" routerLink="/home">Home</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" routerLink="/angular">Angular</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" routerLink="/contact">Contact</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" routerLink="/projects">Projects</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-<div id="main-container">
-  
-  <div id="navbar">
-      <div class="button" routerLink="/home" routerLinkActive="router-link-active">Home</div>
-      <div class="button" routerLink="/angular" routerLinkActive="router-link-active">Angular</div>
-      <div class="button" routerLink="/contact" routerLinkActive="router-link-active">Contact</div>
-      <div class="button" routerLink="/projects" routerLinkActive="router-link-active">Projects</div>
-  </div>
+<router-outlet></router-outlet>
 
-  <div id="content-container">
-    <div id="content-zone">
-    
-      <router-outlet></router-outlet>
+<!-- Footer -->
+<footer class="footer text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-5 mb-lg-0">
+        <h4 class="text-uppercase mb-4">Location</h4>
+        <p class="lead mb-0">2215 John Daniel Drive
+          <br>Clark, MO 65243</p>
+      </div>
+      <div class="col-md-4 mb-5 mb-lg-0">
+        <h4 class="text-uppercase mb-4">Around the Web</h4>
+        <ul class="list-inline mb-0">
+          <li class="list-inline-item">
+            <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+              <i class="fab fa-fw fa-facebook-f"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+              <i class="fab fa-fw fa-google-plus-g"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+              <i class="fab fa-fw fa-twitter"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+              <i class="fab fa-fw fa-linkedin-in"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+              <i class="fab fa-fw fa-dribbble"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h4 class="text-uppercase mb-4">About Freelancer</h4>
+        <p class="lead mb-0">Freelance is a free to use, open source Bootstrap theme created by
+          <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+      </div>
     </div>
   </div>
+</footer>
+
+<div class="copyright py-4 text-center text-white">
+  <div class="container">
+    <small>Copyright &copy; Your Website 2019</small>
+  </div>
 </div>
+
+<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+<div class="scroll-to-top d-lg-none position-fixed ">
+  <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+    <i class="fa fa-chevron-up"></i>
+  </a>
+</div>
+
+
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<!-- Contact Form JavaScript -->
+<script src="js/jqBootstrapValidation.js"></script>
+<script src="contact_me.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="freelancer.min.js"></script>

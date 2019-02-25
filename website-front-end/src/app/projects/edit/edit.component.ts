@@ -24,6 +24,7 @@ export class EditComponent implements OnInit {
 
   titleError : String;
   linkError : String;
+  displayImageError : String;
   contentError : String;
 
   constructor(private api : APIService, private route: ActivatedRoute) { 
@@ -47,6 +48,7 @@ export class EditComponent implements OnInit {
       this.project.id = data['id'];
       this.project.title = data['name'];
       this.project.linkName = data['symLink'];
+      this.project.displayImage = data['displayImage'];
       this.project.dateCreated = data['dateCreated'];
       this.project.lastModified = data['lastModified'];
       this.project.content = data['content'];
@@ -82,6 +84,7 @@ export class EditComponent implements OnInit {
     var formValid = true;
     if (!this.isTitleValid()) formValid = false;
     if (!this.isLinkValid()) formValid = false;
+    if (!this.isDisplayImageValid()) formValid = false;
     if (!this.isContentValid()) formValid = false;
 
     return formValid;
@@ -103,6 +106,16 @@ export class EditComponent implements OnInit {
       return false;
     } else {
       this.linkError = null;
+      return true;
+    }
+  }
+
+  isDisplayImageValid() {
+    if (this.project.displayImage.length == 0) {
+      this.displayImageError = "Cannot be left empty.";
+      return false;
+    } else {
+      this.displayImageError = null;
       return true;
     }
   }
