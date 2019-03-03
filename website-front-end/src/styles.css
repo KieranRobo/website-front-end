@@ -203,6 +203,7 @@ header.masthead h2 {
 
 .portfolio {
   margin-bottom: -15px;
+  min-height: 40em;
 }
 
 .portfolio .portfolio-item {
