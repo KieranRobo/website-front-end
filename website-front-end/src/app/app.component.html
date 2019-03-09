@@ -2,7 +2,7 @@
  <!-- Navigation -->
  <nav class="navbar navbar-expand-lg bg-secondary-theme fixed-top text-uppercase" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" routerLink="/home">Kieran Robertson</a>
+      <a class="navbar-brand js-scroll-trigger" routerLink="">Kieran Robertson</a>
       <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary-theme text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
@@ -10,16 +10,16 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" routerLink="/home">Home</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" routerLink="">Home</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" routerLink="/angular">Angular</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" routerLinkActive="active" routerLink="/angular">Angular</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" routerLink="/contact">Contact</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" routerLinkActive="active" routerLink="/contact">Contact</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" routerLink="/projects">Projects</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" routerLinkActive="active" routerLink="/projects">Projects</a>
           </li>
         </ul>
       </div>
