@@ -26,11 +26,7 @@ import { DeleteProjectDialog } from './projects/view/view.component';
 
 
 const appRoutes: Routes = [
-  { path: '',
-  redirectTo: '/home',
-  pathMatch: 'full'
-  },
-  { path: 'home', component: HomeComponent, pathMatch: 'full' },
+  { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'angular', component: AngularComponent, pathMatch: 'full' },
   { path: 'contact', component: ContactComponent, pathMatch: 'full' },
   { path: 'p/:link',  component: ViewProjectComponent }
