@@ -2,7 +2,7 @@
 
 {
     "/api/*": {
-      "target": "http://kieranrobertson.com/api",
+      "target": "https://kieranrobertson.com/api",
       "secure": false,
       "logLevel": "debug",
       "changeOrigin": true,

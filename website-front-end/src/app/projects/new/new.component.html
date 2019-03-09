@@ -33,7 +33,7 @@
 
   <div class="form-group">
       <label for="displayImage">Display Image URL</label>
-      <input [(ngModel)]="newProject.displayImage" #displayImage="ngModel" type="text" class="form-control" id="displayImage" name="displayImage" aria-describedby="displayImageHelp" placeholder="http://kieranrobertson.com/image.png" 
+      <input [(ngModel)]="newProject.displayImage" #displayImage="ngModel" type="text" class="form-control" id="displayImage" name="displayImage" aria-describedby="displayImageHelp" placeholder="https://kieranrobertson.com/image.png" 
       (change)="this.isDisplayImageValid()" required>
       <div *ngIf="displayImageError != null"
         class="alert alert-danger">
